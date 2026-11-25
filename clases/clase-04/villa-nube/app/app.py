@@ -115,7 +115,7 @@ def radicar():
         return jsonify(error="'fecha_documento' debe tener formato AAAA-MM-DD"), 400
 
     antiguedad = (date.today() - fecha_doc).days
-    if antiguedad > DIAS_VIGENCIA:
+    if antiguedad > 900:
         # Regla del negocio vista en la Clase 2: documentos vencidos se rechazan.
         return (
             jsonify(
